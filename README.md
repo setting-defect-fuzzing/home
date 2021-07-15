@@ -1,15 +1,23 @@
-# 1. Getting Started
+# SetDroid Prototype
 
-## 1.1 Running SetDroid via Virtual Machine
+SetDroid is an end-to-end, automated GUI testing tool
 
-### Requirements
+## Publication
+
+[1] Understanding and Finding System Setting-Related Defects in Android Apps (ISSTA'2021)
+
+## Getting Started
+
+### Running SetDroid via Virtual Machine
+
+#### Requirements
 
 * You need to enable virtualization technology in your computer's BIOS, see [this link](https://stackoverflow.com/questions/35456063/enable-intel-vt-x-intel-virtualization-technology-intel-vt-x) for how to enable virtualization technology in the computer. Some computers have turned on virtualization by default. 
 * Your computer needs at least 16G of memory, and at least 40G of storage.
 * VirtualBox: we built our artifact by using version 6.1.20.
 * Download the zip file from [this link](https://1drv.ms/u/s!AinXMMnLw-UDjTNrboNh0fTfss6G?e=v0Va1t), and extract it.
 
-### Setting up ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
+#### Setting up ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
 
 * Open VirtualBox, click "File", click "Import Appliance", then select the file named "SetDroid.ova" from the extracted contents (this step will take about five to ten minutes to complete). 
 * After the import is completed, you should see "vm" as one of the listed VMs in your VirtualBox.
@@ -24,7 +32,7 @@ sudo mkdir /media/temp
 sudo mount /usr/share/virtualbox/VBoxGuestAdditions.iso /media/temp
 ```
 
-### Run ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
+#### Run ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
 
 * Open the terminal and execute the following command:
 ```
@@ -49,9 +57,9 @@ python3 start.py -app_path /home/setdroid/SetDroid/App/a2dp.Vol.apk -append_devi
 python3 start.py -app_path /home/setdroid/SetDroid/App/com.amaze.filemanager.apk -append_device emulator-5554 -append_device emulator-5556 -android_system emulator8 -append_strategy permssion_lazy_1 -append_strategy language -testcase_count 10 -event_num 100
 ```
 
-## 1.2 Building and Running SetDroid From Scratch
+### Building and Running SetDroid From Scratch
 
-### Requirements
+#### Requirements
 
 - Download all the files from [this link](https://1drv.ms/u/s!AinXMMnLw-UDjTX9NJsPSWALFx5p?e=nwW830)
 - Download all the apps from [this link](https://1drv.ms/u/s!AinXMMnLw-UDjWBJXwgywNLad3T9?e=S1mMXt)
@@ -62,7 +70,7 @@ python3 start.py -app_path /home/setdroid/SetDroid/App/com.amaze.filemanager.apk
 pip3 install langid
 ```
 
-### Setting up
+#### Setting up
 
 You can create an emulator before running SetDroid. See [this link](https://stackoverflow.com/questions/43275238/how-to-set-system-images-path-when-creating-an-android-avd) for how to create avd using [avdmanager](https://developer.android.com/studio/command-line/avdmanager).
 The following sample command will help you create an emulator, which will help you to start using SetDroid quickly：
@@ -75,7 +83,7 @@ Next, you can start two identical emulators and assign their port numbers with t
 emulator -avd Android8.0 -read-only -port 5554
 emulator -avd Android8.0 -read-only -port 5556
 ```
-### Run
+#### Run
 If you have downloaded our project and configured the environment, you only need to enter ```download_path/tool``` to execute our sample app with the following command:
 ```
 python3 start.py -app_path /home/setdroid/SetDroid/App/a2dp.Vol.apk -append_device emulator-5554 -append_device emulator-5556 -android_system emulator8 -append_strategy display_immediate_1 -testcase_count 1
@@ -85,9 +93,9 @@ SetDroid provides several ways to test android apps by command lines. You need t
 python3 start.py --help
 ```
 
-# 2 Detailed Description
+## Detailed Description
 
-## 2.1 All Optional Parameters of SetDroid
+### All Optional Parameters of SetDroid
 
 * ```-pro_click``` The proportion of click events, which is 45% by default.
 * ```-pro_longclick``` The proportion of long-press events, which is 25% by default.
@@ -125,7 +133,7 @@ python3 start.py --help
 |language| Language| II| -| ⟨change system language, -⟩|
 |time| Time| II| -| ⟨change hour format, -⟩|
 
-## 2.2 Description of Output Files ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
+### Description of Output Files ([video tutorial](https://1drv.ms/u/s!AinXMMnLw-UDjgCWoQclrXqb6-xE?e=n6eiDy))
 
 * The output path of the tool is in ```/home/setdroid/SetDroid/Root```. 
 * The result files of each app are classified and stored in ```/home/setdroid/SetDroid/Root```. 
@@ -135,106 +143,45 @@ python3 start.py --help
 * Open the ```screen``` folder, and you can see the screenshot of each step and the corresponding interface layout information file. 
 * Next, I will introduce the content and use of each file.
 
-### error_realtime.txt
+#### error_realtime.txt
 
 This file records the sequences that trigger the setting defects, which start with ```Start::x::run_count::y``` (x means the x-th error and Y means the error was captured during the y-th round of execution), and end with ```End::```
 
-### wrong_realtime.txt
+#### wrong_realtime.txt
 
 This file records the sequences that trigger the suspected setting defects.
 
-### read_trace.txt
+#### read_trace.txt
 
 This file records the execution sequence of SetDroid, which is easy for SetDroid users to read.
 
-### trace.txt
+#### trace.txt
 
 This file records the execution sequence of SetDroid, which can be read and replayed by SetDroid.
 
-### i_trace.html
+#### i_trace.html
 
 This file records the sequence of screenshots after each step, which is arranged horizontally. The events executed at each step are marked on the screenshot. After opening the file in the browser, there is a drag bar at the bottom, which can drag horizontally to view the whole sequence. When the error is captured, the screenshot is marked with a red frame. When the two interfaces are different, the screen capture is marked with a yellow frame.
 
-## 2.3 Study Dataset
-
-Download the zip file (Study.zip) from [this link](https://1drv.ms/u/s!AinXMMnLw-UDjXnS2eVoEFrc05Bh?e=uicNPv), and extract it.
-
-### project_lists.xlsx
-
-This file contains all the Android projects officially released on Google Play and F-Droid that we obtained through GitHub's REST API. We listed their repo names, the number of closed issues, the number of open issues, and the number of stars on GitHub. We keep the apps with more than 200 issues in this list as study objects, a total of 180 apps.
-
-### app_infomation.xlsx (corresponding to Figure 2 in our paper)
-
-This file contains all the information (star numbers, issue numbers, installations, and categories) of our study objects, corresponding to the data in Figure 2 in the paper.
-
-### setting_keyword_issues.xlsx
-
-This file contains all issues of 180 apps obtained through keyword filtering. We listed their repo name, URL, open time, closed time, and setting keywords mentioned in the issue.
-
-### study_list.xlsx (corresponding to Table 3 in our paper)
-
-This file contains 1,074 setting issues of 180 apps that we obtained through manual inspection. For each issue, we listed its URL, consequence, whether it was closed, whether it was repaired, the length of the reproduce steps reported by the reporter, the setting that caused the issue, and the root cause of the issue.
-
-### specific_APIs_list.xlsx
-
-This file lists the specific APIs that we used when investigating the usage of settings in the apps. We listed their corresponding setting categories, the classes they belong to, and the forms used in the static analysis.
-
-### usage_of_settings.xlsx (corresponding to Table 2 in our paper)
-
-This file lists the APIs related to the setting categories used by each app. For each app, we counted the usage of six settings. The number 1 means that at least one API corresponding to this setting category has been detected in the code of the app.
-
-## 2.4 Evaluation Data
-
-* Download the zip file (Evaluation.zip) from [this link](https://1drv.ms/u/s!AinXMMnLw-UDjXnS2eVoEFrc05Bh?e=uicNPv), and extract it. It contains the test results of open-source apps. Due to trade secrets, bug reports and running paths of five industrial apps cannot be disclosed.
-
-### Bugs (corresponding to Table 8 and Table 6 in our paper)
-
-* The file called ```bug list.md``` records the information of 42 bugs reported by SetDroid and bugs detected by PatDroid, corresponding to columns 5-8 in Table 8 and the last four columns in Table 6 in our paper
-
-### TP and FP (corresponding to the last four columns in Table 6 in our paper)
-
-* The trace of all errors (both TP and FP) reported by SetDroid in Table 6 and the screenshot after each step are stored in the ```TP and FP``` folder. Note that the tool has been reconstructed in the process of running the experiment, so the format of the output file is slightly different. The total running times are shown in section 4.3.
-* There are 24 folders in ```TP and FP```, corresponding to 24 apps in the second column of Table 6 of the paper. Each folder is named by the package name of the app. For the corresponding relationship between package name and app name, see ```app_infomation.xlsx``` (in section 2.1.2).
-* Under each app folder, there are two folders ```TP``` and ```FP```, and each folder has two folders ```Rule1``` and ```Rule2```, corresponding to the last four columns in Table 6. That is, ```/FP/Rule1/``` corresponds to the column FP<sup>I</sup> of Table 6, ```/TP/Rule1/``` corresponds to the column TP<sup>I</sup> of Table 6, ```/FP/Rule2/``` corresponds to the column FP<sup>II</sup> of Table 6, ```/TP/Rule2/``` corresponds to the column TP<sup>II</sup> of Table 6.
-* For errors detected by using ```Oracle checking rule I```, as context information is needed to reproduce the errors, SetDroid will record in detail the trace that triggers each error (stored in the ```trace.txt``` file), the screenshots and interface layout files after each step (stored in the ```screen``` folder).
-* For errors detected by using ```Oracle checking rule II```, SetDroid will simply record the screenshots and interface layout files with errors, as well as fields that are not converted correctly according to settings (recorded in ```language.txt``` or ```time.txt```).
-* For example, if you want to verify the data of the last app ```Habits``` in Table 6, you can open the directory ```org.isoron.uhabits``` in the directory ```/TP and FP/ ```. In Table 6, the FP<sup>I</sup> of ```Habits``` is 2, TP<sup>I</sup> is 2, FP<sup>II</sup> is 0 and TP<sup>II</sup> is 1, so:
-    - ```/Evaluation/TP and FP/com.tom.alwayson/FP/rule1/``` has two folders (```1_time```, and ```2_time```), corresponding to two FPs caused by changing time setting.
-        - For example, ```/Evaluation/TP and FP/com.tom.alwayson/FP/rule1/1_time/``` have a folder `screen` and a file `trace.txt`. Open folder `screen` to see the interface information of the app before executing each step in `trace.txt` on two different devices, such as `1_emulator-5554` corresponds to the interface information before the execution of the first step in device `emulator-5554`. `1_emulator-5556` corresponds to the interface information before the execution of the first step in device emulator-5556. However, as the device `emulator-5554` uses 12 hour format and the device `emulator-5556` uses 24 hour format, after the execution of step 18, the clock styles of the device `emulator-5554` and the device `emulator-5556` are different, so the step 19 can be executed on the device `emulator-5554`, but can not be executed on the `emulator-5556`, so SetDroid reports an error. After manual confirmation, we think that this is not a bug, so we classify it in FP.
-    - ```/Evaluation/TP and FP/com.tom.alwayson/TP/rule1/``` has two folders (```1_rotate```, and ```2_rotate```), corresponding to two FPs caused by changing display setting (rotating screen).
-    - ```/Evaluation/TP and FP/com.tom.alwayson/FP/rule2/``` has no content.
-        - For example, ```/Evaluation/TP and FP/com.tom.alwayson/FP/rule1/1_rotate/``` have a folder `screen` and a file `trace.txt`. Open folder `screen` to see the interface information of the app before executing each step in `trace.txt` on two different devices, such as `1_emulator-5554` corresponds to the interface information before the execution of the first step in device `emulator-5554`. `1_emulator-5556` corresponds to the interface information before the execution of the first step in device emulator-5556. As the device `emulator-5556` rotated screen after step 15, so the user's choice of time is lost. As the result, the step 18 can be executed on the device `emulator-5554`, but can not be executed on the `emulator-5556`, so SetDroid reports an error. After manual confirmation, we think that this is a bug with the consequence of data lost, so we classify it in TP.
-    - ```/Evaluation/TP and FP/ com.tom.alwayson/TP/rule2/``` has a folder ```language```, in which six TPs detected after changing the language setting are recorded.
-    
-
-## 2.5 Tool Extension
+### Tool Extension
 
 If someone wants to extend the artifact, they can modify it in the following position of the tool.
 
-### Add settings change strategy
+#### Add settings change strategy
 
 Add a new setting change function in injector.py, and add calls to it to ```change_setting_before_run``` or ```inject_setting_during_run``` as needed.
 
-### Add seed test generation policy
+#### Add seed test generation policy
 
 Add a new exploration class according to ```RandomPolicy``` class in policy.py, and inherit the ```Policy``` class
 
-### Add a new check condition
+#### Add a new check condition
 
 Add a new check function in check.py and call it in the corresponding position in the ```executor.py```
 
+### Maintainer
 
-# 3 Reusibility Statement
+* [Ting Su](http://tingsu.github.io/) - tsuletgo@gmail.com
+* [Jingling Sun](https://jinglingsun.github.io/) - jingling.sun910@gmail.com
 
-We wish to argue that our artifact (SetDroid) should receive an "Artifacts Evaluated - Reusable" badge based on the following points.
 
-* SetDroid is a fully automated, end-to-end GUI testing tool for finding system setting-related defects in Android apps. A user can simply run SetDroid on a given app via command lines, and SetDroid will automatically detect likely setting defects and outputs the corresponding bug reports. To ease bug confirmation, SetDroid provides visual bug
-reports.
-
-* SetDroid is comprehensively documented in README, and Section 2.5 ("Tool Extension") describes several plausible scenarios on how to extend, customize and improve SetDroid.
-
-* The artifact contains all the source code of SetDroid and the virtual machine image (everything is set up). A user can directly use and extend SetDroid from the source code or the VM image. We also provide video tutorials on setting up the tool and illustrating the tool usage.
-
-* The artifact contains the other documentations that describe the use case scenarios and other details of SetDroid. For example, it lists all the supported configuration options/strategies, explains the different types of the output files, and provides all the evaluation data in the original paper.
-
-* SetDroid is well-designed and its source code is easy to understand with necessary comments.
