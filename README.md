@@ -1,10 +1,26 @@
 # SetDroid Prototype
 
-SetDroid is an end-to-end, automated GUI testing tool
-
 ## Publication
 
 [1] Understanding and Finding System Setting-Related Defects in Android Apps (ISSTA'2021)
+```
+@inproceedings{10.1145/3460319.3464806,
+author = {Sun, Jingling and Su, Ting and Li, Junxin and Dong, Zhen and Pu, Geguang and Xie, Tao and Su, Zhendong},
+title = {Understanding and Finding System Setting-Related Defects in Android Apps},
+year = {2021},
+isbn = {9781450384599},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3460319.3464806},
+doi = {10.1145/3460319.3464806},
+booktitle = {Proceedings of the 30th ACM SIGSOFT International Symposium on Software Testing and Analysis},
+pages = {204–215},
+numpages = {12},
+keywords = {Testing, Setting, Empirical study, Android},
+location = {Virtual, Denmark},
+series = {ISSTA 2021}
+}
+```
 
 ## Getting Started
 
