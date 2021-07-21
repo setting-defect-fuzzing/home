@@ -197,6 +197,6 @@ Add a new check function in check.py and call it in the corresponding position i
 
 ### Main Maintainers
 
-* [Jingling Sun](https://jinglingsun.github.io/) - jingling.sun910@gmail.com
-* [Ting Su](http://tingsu.github.io/) - tsu@sei.ecnu.edu.cn
+* [Jingling Sun](https://jinglingsun.github.io/) 
+* [Ting Su](http://tingsu.github.io/) 
 
