@@ -195,9 +195,8 @@ Add a new exploration class according to ```RandomPolicy``` class in policy.py, 
 
 Add a new check function in check.py and call it in the corresponding position in the ```executor.py```
 
-### Maintainer
+### Main Maintainers
 
-* [Ting Su](http://tingsu.github.io/) - tsuletgo@gmail.com
 * [Jingling Sun](https://jinglingsun.github.io/) - jingling.sun910@gmail.com
-
+* [Ting Su](http://tingsu.github.io/) - tsu@sei.ecnu.edu.cn
 
