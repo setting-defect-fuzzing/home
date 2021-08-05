@@ -2,7 +2,7 @@
 
 ## Publication
 
-[1] "Understanding and Finding System Setting-Related Defects in Android Apps" by Jingling Sun, Ting Su, Junxin Li, Zhen Dong, Geguang Pu, Tao Xie and Zhendong Su. *The 30th ACM SIGSOFT International Symposium on Software Testing and Analysis* (ISSTA 2021)
+[1] "[Understanding and Finding System Setting-Related Defects in Android Apps](https://tingsu.github.io/files/issta21-Setdroid.pdf)" by Jingling Sun, Ting Su, Junxin Li, Zhen Dong, Geguang Pu, Tao Xie and Zhendong Su. *The 30th ACM SIGSOFT International Symposium on Software Testing and Analysis* (ISSTA 2021)
 ```
 @inproceedings{10.1145/3460319.3464806,
 author = {Sun, Jingling and Su, Ting and Li, Junxin and Dong, Zhen and Pu, Geguang and Xie, Tao and Su, Zhendong},
