@@ -1,0 +1,151 @@
+{
+
+    "pattern": [
+        {
+            "mainapi": [
+                {
+                    "classname": "",
+                    "methodname": "checkPermission"
+                },
+                {
+                    "classname": "",
+                    "methodname": "checkSelfPermission"
+                }
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+                {
+                    "classname": "",
+                    "methodname": "requestPermission"
+                },
+                {
+                    "classname": "",
+                    "methodname": "shouldShowRequestPermissionRationale"
+                }
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"checkSelfPermission->requestPermissions"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "requestLocationUpdates"
+                },
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "getLastKnownLocation"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "isProviderEnabled"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"isProviderEnabled->getLastKnownLocation"
+        },
+        {
+            "mainapi": [
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.content.Context",
+                    "methodname": "new"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname": "null"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "",
+                    "methodname": "getPackageName"
+                }
+            ],
+            "name":"Context->getPackageName"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "java.net.HttpURLConnection",
+                    "methodname": "setRequestMethod"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "android.permission",
+                    "methodname": "ACCESS_NETWORK_STATE"
+                },
+                {
+                    "classname": "android.permission",
+                    "methodname": "INTERNET"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"android.permission->setRequestMethod"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "java.net.HttpURLConnection",
+                    "methodname": "setRequestMethod"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "ConnectivityManager",
+                    "methodname": "getActiveNetworkInfo"
+                },
+                {
+                    "classname": "ConnectivityManager",
+                    "methodname": "requestNetwork"
+                },
+                {
+                    "classname": "",
+                    "methodname": "isActiveNetworkMetered"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"checknetwork->usenetwork"
+        }
+        
+        
+    ]
+    
+}

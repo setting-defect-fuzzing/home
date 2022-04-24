@@ -1,0 +1,62 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch GeneratePattern",
+            "request": "launch",
+            "mainClass": "GeneratePattern",
+            "projectName": "SettingPattern_51ca20fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch FileParseJson",
+            "request": "launch",
+            "mainClass": "FileParseJson",
+            "projectName": "SettingPattern_51ca20fa"
+        },
+        {
+            "type": "java",
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "projectName": "SettingPattern_51ca20fa",
+            "type": "java",
+            "name": "Launch TestApp",
+            "request": "launch",
+            "mainClass": "TestApp",
+            "args": [
+                "-d",
+                "../output/sootOutput",
+                "-process-dir",
+                "target",
+                "-w",
+                "-android-jars",
+                "android-platforms",
+                "-i",
+                "android.media.AudioManager",
+                "-i",
+                "android.location.LocationManager",
+                "-i",
+                "android.content.Context",
+                "-i",
+                "android.media.RingtoneManager",
+                "-i",
+                "android.telephony.SmsManager",
+                "-i",
+                "android.bluetooth.BluetoothAdapter",
+                "-i",
+                "android.webkit.WebViewClient",
+                "-allow-phantom-refs",
+                "-soot-class-path",
+                ".;C:/Program Files/Java/jdk1.8.0_181/jre/lib/rt.jar;C:/Program Files/Java/jdk1.8.0_181/jre/lib/jce.jar;lib/android-support-v4.jar;lib/android-4.1.1.4.jar;lib/android-2.3.1.jar",
+                "-process-multiple-dex"
+            ]
+        }
+    ]
+}

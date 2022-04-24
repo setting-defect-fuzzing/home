@@ -1,0 +1,316 @@
+{
+    "pattern": [
+        {
+            "mainapi": [
+                {
+                    "classname": "android.location.Location",
+                    "methodname": "getLastKnownLocation"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "isProviderEnabled"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "getLastKnownLocation"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname":"= null"
+                },
+                {
+                    "classname": "",
+                    "methodname":"requireNonNull"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "android.location.Location",
+                    "methodname": "getLatitude"
+                },
+                {
+                    "classname": "android.location.Location",
+                    "methodname": "getLongitude"
+                }
+            ],
+            "name":"isProviderEnabled->getLastKnownLocation->getLatitude"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.media.AudioManager",
+                    "methodname": "setStreamVolume"
+                },
+                {
+                    "classname": "android.media.AudioManager",
+                    "methodname": "setRingerMode"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "android.permission",
+                    "methodname": "ACCESS_NOTIFICATION_POLICY"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"ACCESS_NOTIFICATION_POLICY->AudioManager"
+        },
+        {
+            "mainapi": [
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.content.pm.PackageManager",
+                    "methodname": "getLaunchIntentForPackage"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname":"= null"
+                },
+                {
+                    "classname": "",
+                    "methodname":"requireNonNull"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "android.content.Intent",
+                    "methodname": "startActivity"
+                }
+            ],
+            "name":"getLaunchIntentForPackage->startActivity"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.location.LocationManager",
+                    "methodname": "requestLocationUpdates"
+                },
+                {
+                    "classname": "android.location.Location",
+                    "methodname": "getLastKnownLocation"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "",
+                    "methodname": "ACCESS_COARSE_LOCATION"
+                },
+                {
+                    "classname": "",
+                    "methodname": "ACCESS_FINE_LOCATION"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"permission->requestLocationUpdates"
+        },
+        {
+            "mainapi": [
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.media.RingtoneManager",
+                    "methodname": "getRingtone"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname": "null"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "",
+                    "methodname": ""
+                }
+            ],
+            "name":"READ_EXTERNAL_STORAGE->getRingtone"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.telephony.SmsManager",
+                    "methodname": "sendTextMessage"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "",
+                    "methodname": "SEND_SMS"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"SEND_SMS->sendTextMessage"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.bluetooth.BluetoothAdapter",
+                    "methodname": ""
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "",
+                    "methodname": "BLUETOOTH"
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.bluetooth.BluetoothAdapter",
+                    "methodname": "getDefaultAdapter"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "android.bluetooth.BluetoothAdapter",
+                    "methodname": "isEnabled"
+                },
+                {
+                    "classname": "",
+                    "methodname": "= null"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "android.bluetooth.BluetoothAdapter",
+                    "methodname": "getBondedDevices"
+                },
+                {
+                    "classname": "android.bluetooth.BluetoothAdapter",
+                    "methodname": "getRemoteDevice"
+                }
+            ],
+            "name":"BLUETOOTH_LIST_KEY->getDefaultAdapter"
+        },
+        {
+            "mainapi": [
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "",
+                    "methodname": "TELEPHONY_SERVICE"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname":"= null"
+                },
+                {
+                    "classname": "",
+                    "methodname":"requireNonNull"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "android.telephony.TelephonyManager",
+                    "methodname": "getCellLocation"
+                }
+            ],
+            "name":"TELEPHONY_SERVICE->getCellLocation"
+        },
+        {
+            "mainapi": [
+                {
+                    "classname": "android.webkit.WebViewClient",
+                    "methodname": "onReceivedError"
+                }
+            ],
+            "controlcheckbefore": [
+                {
+                    "classname": "Build.VERSION",
+                    "methodname": ""
+                }
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"Build.VERSION->onReceivedError"
+        },
+        {
+            "mainapi": [
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+            ],
+            "flowgen": [
+                {
+                    "classname": "android.media.MediaPlayer",
+                    "methodname": "new"
+                }
+            ],
+            "flowkill": [
+                {
+                    "classname": "",
+                    "methodname":"= null"
+                },
+                {
+                    "classname": "",
+                    "methodname":"requireNonNull"
+                }
+            ],
+            "flowfind": [
+                {
+                    "classname": "android.media.MediaPlayer",
+                    "methodname": "start"
+                }
+            ],
+            "name":"MediaPlayer->start"
+        }
+        
+    ]
+    
+}

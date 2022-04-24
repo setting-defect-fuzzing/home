@@ -1,0 +1,39 @@
+{
+
+    "pattern": [
+        {
+            "mainapi": [
+                {
+                    "classname": "",
+                    "methodname": "checkPermission"
+                },
+                {
+                    "classname": "",
+                    "methodname": "checkSelfPermission"
+                }
+            ],
+            "controlcheckbefore": [
+            ],
+            "controlcheckafter": [
+                {
+                    "classname": "",
+                    "methodname": "requestPermission"
+                },
+                {
+                    "classname": "",
+                    "methodname": "shouldShowRequestPermissionRationale"
+                }
+            ],
+            "flowgen": [
+            ],
+            "flowkill": [
+            ],
+            "flowfind": [
+            ],
+            "name":"checkSelfPermission->requestPermissions"
+        }
+        
+        
+    ]
+    
+}
