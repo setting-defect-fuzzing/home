@@ -18,6 +18,8 @@
 }
 ```
 
+*You can find more about our work on testing/analyzing Android apps at this [website](https://tingsu.github.io/files/mobile-app-analysis.html)*.
+
 ## Getting Started
 
 ### Running SetDroid via Virtual Machine
