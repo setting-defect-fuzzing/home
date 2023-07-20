@@ -18,6 +18,28 @@
 }
 ```
 
+[2] "[Characterizing and Finding System Setting-Related Defects in Android Apps](https://tingsu.github.io/files/TSE23-SetDroid.pdf)" by Jingling Sun, Ting Su, Kai Liu, Chao Peng, Zhao Zhang, Geguang Pu, Tao Xie, Zhendong Su. *IEEE Transactions on Software Engineering* (TSE 2023)
+```
+@article{SetDroid2,
+  author       = {Jingling Sun and
+                  Ting Su and
+                  Kai Liu and
+                  Chao Peng and
+                  Zhao Zhang and
+                  Geguang Pu and
+                  Tao Xie and
+                  Zhendong Su},
+  title        = {Characterizing and Finding System Setting-Related Defects in Android
+                  Apps},
+  journal      = {{IEEE} Trans. Software Eng.},
+  volume       = {49},
+  number       = {4},
+  pages        = {2941--2963},
+  year         = {2023},
+  doi          = {10.1109/TSE.2023.3236449}
+}
+```
+
 *You can find more about our work on testing/analyzing Android apps at this [website](https://tingsu.github.io/files/mobile-app-analysis.html)*.
 
 ## Getting Started
