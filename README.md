@@ -40,7 +40,7 @@
 }
 ```
 
-*You can find more about our work on testing/analyzing Android apps at this [website](https://tingsu.github.io/files/mobile-app-analysis.html)*.
+*You can find more about our work on testing/analyzing Android apps at this [website](https://mobile-app-analysis.github.io/)*.
 
 ## Getting Started
 
